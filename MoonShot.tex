@@ -365,6 +365,37 @@ As a result, rather than trying to pull together specialists to create the next 
 
 \part{Action}
 
+\chapter{Systems Thinking}
+\section{The Stock Catalog}
+The weird behaviors that show up in systems arise from feedback loops. But feedback loops only happen in the presence of variable stocks because if the thing doesn't vary it can't drive a feedback loop \cite{meadows}. Therefore the first step in understanding \textit{non-linear} aspects of a system is to figure out what the stocks are.
+\newline
+
+Now some stocks are pretty obvious - inventory, money, heat - there's a clearly quantifiable things that come in varying degrees. Other stocks may not be so apparent right off the bat, largely because there are many less tangible stocks out there. For example, suppose that someone is asking you to make a bot that takes in queries and returns responses  about good restaurants in my area. There are two very clear stocks here in the queries and responses but at first blush these don't seem to be driving any feedback loops. However, let's pull in a less tangible stock - relevance. This is also something that is variable in a nature - depending on the kinds of data you have about the nearby restaurants (as well as how well you're using that information) it will either be high or low. If it's high you'd expect people to get their answers quickly and stop querying the service. But if the relevance is low then people might ask the bot increasingly specific questions to get what it is they want. Boom! Suddenly we have a feedback loop. 
+\newline
+
+A stock is really just anything that is \textit{measurable}, \textit{variable}, and \textit{relevant}. Which means that even the rate of change of other stocks can be a stock itself! For example a maximum response rate from our bot is measurable, variable, and certainly affects how our users use the product. 
+\newline
+
+All in all this means that there are a \textit{lot} of potential kinds of stocks out there.Which means there's also a lot of potential for getting overwhelmed by the variety. Therefore this section is all about giving you a sort of cataloged taxonomy of the various kinds of stocks out there. While certainly not complete the hope is that it is more or less comprehensive. 
+
+\section{Timescales [Theory?]}
+The whole reason systems can end up having really weird behaviors is by and large due to the non-linearity that comes about from feedback loops. Our human brains see pretty much everything around us in terms of linear relationships - if you do something and it causes a small change, do that same thing more and you'll see a bigger change of the same kind. You see this same kind of reasoning in math - around any point on a curve you can approximate the curve by a simple straight line. However if you keep moving farther and farther from your starting point, the straight line approximation and the actual curve are going to get more and more out of whack. Similarly while a system may act linearly over small timescales, over longer timescales the non-linearity is going to dominate.
+\newline
+
+A good example of this is something like poverty. You can go ahead and redistribute wealth to try and remove poverty and for a short while it will. However over time wealth will begin to accumulate again until you're back in the same spot (just maybe it isn't precisely the same people who are poor this time around). 
+\newline
+
+Why bring this up? Because if you imagined a group getting evaluated on short time scales, then this single redistribution event would be considered a grand success and then everyone would pack up and going home while patting themselves on the back. Systems behavior only shows up when you are considering \textit{the appropriate timescales}. 
+\newline
+
+In general then unless we consider our systems in the contexts of many different timescales, we're not actually going to see all the behaviors that could result and either help us toward our goal or push away from it. So when considering systems \textit{you must} consider as many orders of magnitude of time as you can.
+\newline
+
+Obviously this can seem a bit ridiculous. If I'm trying to build a tool that people interface with only for a matter of moments, why would I care about systems timescales on the order of months or years? Because the parts of your system that matter over months or years won't be obvious until you do so. Only consider the short term and you'll end up building things that don't last because there was nothing built into your systems to keep the thing up to date or interesting to your consumers. Or similarly you'll build a system that, like our few-year term political system, responds to local feedback so well that it never actually deals with overarching, long term issues. 
+\newline
+
+Consider your system within each order of timescale because you won't see what might matter until you do.
+
 \bibliographystyle{plain}
 \bibliography{reference}
 \end{document}
