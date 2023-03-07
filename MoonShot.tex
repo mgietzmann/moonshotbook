@@ -9,7 +9,7 @@
 \title{How to Shoot for the Moon and Land in the Stars}
 \author{Marcel Gietzmann-Sanders}
 \date{}
-\setcounter{tocdepth}{0}
+\setcounter{tocdepth}{1}
 \begin{document}
 \maketitle
 \tableofcontents
@@ -366,17 +366,68 @@ As a result, rather than trying to pull together specialists to create the next 
 \part{Action}
 
 \chapter{Systems Thinking}
-\section{The Stock Catalog}
+\section{The Building Blocks}
+Before we can start building systems we first need to understand what components are available to us and what each is for. To start off it should be clear that everything you put into your system needs to be measurable - if it's not measurable there's no way to simulate things out or know the state of your system. 
+\newline
+
+Next the only things you'll really care about in your system are things that can change. Why is this?
+
+\begin{enumerate}
+\item Your system is here to do work and work can only be done on things that have the potential to change. Even if you're trying to hold something constant like the heat in your house it's only the fact that the heat can change that makes the system interesting and means it is doing work.
+\item The whole point of looking at the system is to tune knobs and add additional subsystems to get things to work, so if something is just constant it's really of no interest as it's not something you can adjust. 
+\end{enumerate}
+
+Of your measurable, variable things you're going to have two kinds - stocks and rates. Stocks are things you can just measure in the moment - like how many shoes you have in your inventory. Rates require the passage of time to measure - you don't know how quickly your inventory is increasing until you measure that increase over time. You can of course have rates of rates or rates of rates of rates. So with stocks and rates in hand you've got every kind of variable possible.
+\newline
+
+Now, as was mentioned in \textit{Intuition} all the weird behaviors in systems arise from things like feedback loops, delays, etc. However, to truly understand \textit{why} these lead to weird behaviors we must introduce another distinction in our building blocks - how change to our variable measures happens. There are essentially two kinds of change our stocks and measures can have - memory-less or memory-full. 
+\newline
+
+Memory-less changes are the easier to understand. These kinds of changes happen when the \textit{instantaneous state} of your system is all you need to know what the value of a stock or rate is. Another way of looking at this is that the state of that measurable changes instantaneously with the change in system state. And this is what makes it memory-less - that instantaneous change wipes the "memory" of the past system from that variable.
+\newline
+
+Alternatively, rates or stocks can be memory-full. This happens when change is not instantaneous and therefore the past states of the system do matter. 
+\newline
+
+To illustrate these consider the thermostat example given in \textit{Thinking in Systems} \cite{meadows}. A memory-less stock is the difference in temperature between the outside and inside - it immediately changes whenever either of those stocks change. A memory-full stock is the inside temperature, it takes time for the furnace to adjust it for conduction to cause heat to escape to the outside. A memory-less rate is the rate of conduction - physics is real fast. However the heating rate is memory-full because there's a delay between the measurement and the furnace actually heating up to the needed temperature. 
+\newline
+
+At this point it should now be clear that all the weirdness in systems arises, ultimately, from the memoryfull components. The oscillations in car sales mentioned in \textit{Intuition} was due to delays and similarly the gap between the temperature you set and the temperature you get is due to memory-fullness in the thermostat system. All of this means that identifying what is memory-full vs memory-less is extremely important. But it's also relatively easy - things that take time to change or have delays involved are memory-full whereas things that act instantaneously are memory-less. 
+\newline
+
+Alright let's summarize all of that for easier reference:
+
+\begin{enumerate}
+\item All components in your system should be measurable and variable as these are the only things we can do work with/on.
+\item There are two kinds of measurable in your system - stocks and rates. Stocks can be measured instantaneously whereas rates describe a rate of change of a stock.
+\item Your measurables will either be memory-full or memory-less - which is determined by whether changes can happen instantaneously or not
+\end{enumerate}
+
+Finally, how should we represent all of these when diagramming systems out? 
+
+\begin{enumerate}
+\item Each measureable should have a block dedicated to itself. 
+\item For memory-full variables they should have indicated each of the inflows and outflows (which will each be a component themselves).
+\item Each memory-less variable should just point back to what it's a direct function of and that function should be indicated.
+\end{enumerate}
+
+Note that this now gives us a relatively straightforward recursive strategy to roughing out a system graph. 
+
+\begin{enumerate}
+\item Start with the stocks that you'd like to control/change
+\item Determine if the stocks are memory-full or memory-less
+\item For those that are memory-less, tie them back to their independent variables
+\item For those that are memory-full, determine the rates associated with them and repeat this process for those rates
+\end{enumerate}
+
+\section{The Catalog}
 The weird behaviors that show up in systems arise from feedback loops. But feedback loops only happen in the presence of variable stocks because if the thing doesn't vary it can't drive a feedback loop \cite{meadows}. Therefore the first step in understanding \textit{non-linear} aspects of a system is to figure out what the stocks are.
 \newline
 
 Now some stocks are pretty obvious - inventory, money, heat - there's a clearly quantifiable things that come in varying degrees. Other stocks may not be so apparent right off the bat, largely because there are many less tangible stocks out there. For example, suppose that someone is asking you to make a bot that takes in queries and returns responses  about good restaurants in my area. There are two very clear stocks here in the queries and responses but at first blush these don't seem to be driving any feedback loops. However, let's pull in a less tangible stock - relevance. This is also something that is variable in a nature - depending on the kinds of data you have about the nearby restaurants (as well as how well you're using that information) it will either be high or low. If it's high you'd expect people to get their answers quickly and stop querying the service. But if the relevance is low then people might ask the bot increasingly specific questions to get what it is they want. Boom! Suddenly we have a feedback loop. 
 \newline
 
-A stock is really just anything that is \textit{measurable}, \textit{variable}, and \textit{relevant}. Which means that even the rate of change of other stocks can be a stock itself! For example a maximum response rate from our bot is measurable, variable, and certainly affects how our users use the product. 
-\newline
-
-All in all this means that there are a \textit{lot} of potential kinds of stocks out there.Which means there's also a lot of potential for getting overwhelmed by the variety. Therefore this section is all about giving you a sort of cataloged taxonomy of the various kinds of stocks out there. While certainly not complete the hope is that it is more or less comprehensive. 
+What's key here is that there are a \textit{lot} of different kinds of stocks (and rates) out there which means there's also a lot of potential for getting overwhelmed by the variety. Therefore this section is all about giving you a sort of cataloged taxonomy of the various kinds of stocks out there. While certainly not complete the hope is that it is more or less comprehensive. 
 
 \section{Timescales [Theory?]}
 The whole reason systems can end up having really weird behaviors is by and large due to the non-linearity that comes about from feedback loops. Our human brains see pretty much everything around us in terms of linear relationships - if you do something and it causes a small change, do that same thing more and you'll see a bigger change of the same kind. You see this same kind of reasoning in math - around any point on a curve you can approximate the curve by a simple straight line. However if you keep moving farther and farther from your starting point, the straight line approximation and the actual curve are going to get more and more out of whack. Similarly while a system may act linearly over small timescales, over longer timescales the non-linearity is going to dominate.
@@ -395,6 +446,11 @@ Obviously this can seem a bit ridiculous. If I'm trying to build a tool that peo
 \newline
 
 Consider your system within each order of timescale because you won't see what might matter until you do.
+
+\chapter{Things I'd Like to Include}
+\begin{enumerate}
+\item The fact that lots of times we think of building products and the product as the system we are managing when really the system we are managing is the organization doing the work of building the system (everyone at Viasat doesn't think about development as a system at all, the only systems we think about are technical ones)
+\end{enumerate}
 
 \bibliographystyle{plain}
 \bibliography{reference}
