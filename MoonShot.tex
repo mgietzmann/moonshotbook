@@ -420,16 +420,72 @@ Note that this now gives us a relatively straightforward recursive strategy to r
 \item For those that are memory-full, determine the rates associated with them and repeat this process for those rates
 \end{enumerate}
 
-\section{The Catalog}
+\section{Obtaining Comprehension}
+When first capturing or designing systems it can quickly get overwhelming just because there are so many possible systems flying about. For example in my line of work there's the products we're building, the ecosystems they're embedded in, how we deploy things, how we test things, how we develop things, how we continue updating things, how we run product management, etc. As a result of all of this a lot of anxiety can just come from worrying whether you've captured all the relevant systems or not. Thankfully there are some relatively straightforward ways to deal with growing comprehension. 
+\newline
+
+The first has to do with recognizing what systems do - the do work. As a result, anytime you see anyone within your domain \textit{doing something} whatever they are doing is probably part of some system. When they learn something new - there's a system. When they apply that knowledge - there's a system. When they interact with customers - there's a system. When they are originally hired - there's a system. Anytime change of any kind propagates through your domain you've got an indication that there's a system there.
+\newline
+
+This means that as a first step you can simply start cataloging work/change being done inside of your system and use that catalog to drive system development/design. Overtime what will happen is that you'll just end up finding that what you put into your catalog each day just ends up being encompassed by systems you've already drawn out and understand. At that point you'll know you've gotten close to comprehension and can switch to just trying to find outliers that haven't yet been captured. 
+\newline
+
+Now all of this may still seem a little bit overwhelming given that we're going to have \textit{a lot} of different kinds of work to incorporate into systems and building systems for them all seems a little over the top. This then is where the second piece of insight comes in - systems usually come in relatively standard, repeatable forms. For example education is a system present in pretty much every professional system. Specific kinds of management also form systems that are pretty commonplace. These archetypes therefore allow you to start placing the kind of work you're observing in different general "bins" that can each be turned into a system by taking a base version of that archetype and modifying it to your specific situation. In other words, rather than always starting from scratch we can reuse archetypes found in other situations and simply modify them. Question is, how do you know which archetype(s) to use?
+\newline
+
+Here we'll bring in a third idea - purpose. Every system has a specific kind of goal. It's the stock or stocks that are central to the system and specifically how those stocks are trying to be controlled. For example the thermostat system we've talked about before is trying to maintain a specific temperature, wall street is trying to create economic growth, and our political system is trying to keep our laws relevant to our times (at least in theory...). 
+\newline
+
+When we find some new kind of work being done we can similarly ask - to what purpose are we doing this? I.e. what stock(s) or rate(s) are we attempting to control using these actions. Then we can look back at our catalog of archetypes and look to see two things - (1) what archetypes share similar purposes and (2) which archetypes take advantage of such purpose as input. With these in hand we'll have a selection of systems we can be pretty sure our work belongs to.
+\newline
+
+Finally, regardless of how well the prior steps work, we're going to likely end up with a lot of different stocks, rates, and systems in all sorts of webs. So equally important to getting a handle of all of this is to recognize and act upon opportunities for hierarchy. Specifically it's a good idea to outline the broad view of the overall system before getting into the details of subsystems. So what distinguishes the high level from the low level? Purpose. 
+\newline
+
+The key here is to recognize means as opposed to ends. Ends are stocks or rates that are simply just valuable, not questions asked. Means are the things that help us build out those ends. Each subsystem is more or less defined by the fact that its ends are the means for some larger, "higher level" system. For example a machine learning model's goal is just to produce really good predictions. However really good predictions on their own don't produce value outright so there will be a higher level system using those predictions to themselves produce another kind of end. 
+\newline
+
+Capturing this chain of means to ends is the first step in outlining a general hierarchy and organizing the systems design work you'll be doing. Absolutely take advantage of this to organize yourself and work on obtaining breadth before depth.
+\newline
+
+Alright let's summarize this process.
+
+\begin{enumerate}
+\item Begin maintaining a catalog of work you observe that you haven't yet placed in a system by picking items off of here you'll work your way towards comprehension
+\item For each of those items ask \textit{why} the work exists - i.e. to what end.
+\item Then ask if the purpose of the work is really a true end or just a means, for each level you jump up (until you get to your specific role) note that you have a new level of hierarchy
+\item Repeat for each piece of work in your backlog until you've exhausted the list and have a sense of all the levels of hierarchy in your system
+\item For each level of the hierarchy you find using its purpose find relevant archetypes (having the same purpose or having that purpose as an input)
+\item Plug those archetypes in and start modifying them as needed
+\end{enumerate}
+
+By performing this exercise consistently you will end up driving your way towards the comprehension you want. 
+
+\section{Choosing Stocks}
+When you're first identifying the kinds of work that are going on within the systems you are designing or managing it can be hard to figure out what the stocks really are. This section goes through some helpful questions to ask yourself while doing so.
+
+\subsection{Is it a Currency of Exchange}
+There are many ways to describe the same kind of change. For example if there's an optimization I have a team developing, what exactly are the stocks that are changing? Clearly I'm hopeful that the optimization is getting better, but what does better mean here and how does that translate into stocks? For example I could say the optimization might be getting more relevant, but I can assure you that trying to stick that into a systems design is going to lead to a lot of befuddlement and confusion. Why? Because no one is actually exchanging relevance - relevance is an (intended) outcome of what is actually being exchanged - which is development work on a backlog. 
+\newline
+
+When you are trying to determine what stocks are associated with the work in question ask yourself this, what is the currency of exchange here. What is being moved out of one person's queue into another's. Systems move and transform things, so without having the specific thing being moved or transformed it'll be impossible to build out a coherent system. So:
+
+\begin{enumerate}
+\item Identify the work in question
+\item Ask to what purpose it is being done
+\item Then determine the currencies of exchange to meet those goals
+\end{enumerate}
+
+\subsection{Look to the Catalog}
 The weird behaviors that show up in systems arise from feedback loops. But feedback loops only happen in the presence of variable stocks because if the thing doesn't vary it can't drive a feedback loop \cite{meadows}. Therefore the first step in understanding \textit{non-linear} aspects of a system is to figure out what the stocks are.
 \newline
 
 Now some stocks are pretty obvious - inventory, money, heat - there's a clearly quantifiable things that come in varying degrees. Other stocks may not be so apparent right off the bat, largely because there are many less tangible stocks out there. For example, suppose that someone is asking you to make a bot that takes in queries and returns responses  about good restaurants in my area. There are two very clear stocks here in the queries and responses but at first blush these don't seem to be driving any feedback loops. However, let's pull in a less tangible stock - relevance. This is also something that is variable in a nature - depending on the kinds of data you have about the nearby restaurants (as well as how well you're using that information) it will either be high or low. If it's high you'd expect people to get their answers quickly and stop querying the service. But if the relevance is low then people might ask the bot increasingly specific questions to get what it is they want. Boom! Suddenly we have a feedback loop. 
 \newline
 
-What's key here is that there are a \textit{lot} of different kinds of stocks (and rates) out there which means there's also a lot of potential for getting overwhelmed by the variety. Therefore this section is all about giving you a sort of cataloged taxonomy of the various kinds of stocks out there. While certainly not complete the hope is that it is more or less comprehensive. 
+What's key here is that there are a \textit{lot} of different kinds of stocks (and rates) out there which means there's also a lot of potential for getting overwhelmed by the variety. Therefore it's useful to keep and use a sort of cataloged taxonomy of the various kinds of stocks out there. Oftentimes you've already discovered the stock or rate that you're looking for. 
 
-\section{Timescales [Theory?]}
+\section{Timescales}
 The whole reason systems can end up having really weird behaviors is by and large due to the non-linearity that comes about from feedback loops. Our human brains see pretty much everything around us in terms of linear relationships - if you do something and it causes a small change, do that same thing more and you'll see a bigger change of the same kind. You see this same kind of reasoning in math - around any point on a curve you can approximate the curve by a simple straight line. However if you keep moving farther and farther from your starting point, the straight line approximation and the actual curve are going to get more and more out of whack. Similarly while a system may act linearly over small timescales, over longer timescales the non-linearity is going to dominate.
 \newline
 
@@ -447,9 +503,20 @@ Obviously this can seem a bit ridiculous. If I'm trying to build a tool that peo
 
 Consider your system within each order of timescale because you won't see what might matter until you do.
 
+\chapter{Catalogs}
+\section{The Archetype Catalog}
+
+\section{The Currencies Catalog}
+
+
+
+
 \chapter{Things I'd Like to Include}
 \begin{enumerate}
 \item The fact that lots of times we think of building products and the product as the system we are managing when really the system we are managing is the organization doing the work of building the system (everyone at Viasat doesn't think about development as a system at all, the only systems we think about are technical ones)
+\item The need for precision
+\item When aren't systems relevant?
+\item How does all of this practical stuff tie back to our positive sum systems idea?
 \end{enumerate}
 
 \bibliographystyle{plain}
