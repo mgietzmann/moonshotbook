@@ -503,19 +503,50 @@ Obviously this can seem a bit ridiculous. If I'm trying to build a tool that peo
 
 Consider your system within each order of timescale because you won't see what might matter until you do.
 
-\chapter{Catalogs}
+\section{When Systems aren't Relevant}
+Systems, as we've discussed so far, occur anytime we have variable stocks or rates that are doing work. And while this may seem like pretty much everything out there, as with anything else, there are boundaries to the relevance of thinking in this way. 
+\newline
+
+The boundaries are both fundamental and practical. For example when I'm thinking about an organization at a very high level, trying to capture every little detail of the system just becomes overwhelming. So, as we've pointed at before, we start to build hierarchies of subsystems. But at the higher levels those subsystems are not really thought of as systems in and of themselves. Instead they are thought of as black boxes that simply take in certain inputs, provide certain outputs, and may or may not be modified by various stocks in the high level system. But by and large we can think of these black boxes as taking one kind of stock and turning it into other kinds of stocks - these black boxes are transformers. 
+\newline
+
+However sometimes transformers arise out of more than just simple practicality. For example in the section \textit{The Building Blocks} we pointed out that sometimes things are just direct (memory-less) functions of other parts of the system. The changes in temperature due to conduction in our thermostat example was one of them. Another example would be something like a physical lever - use it one way and it'll always respond in kind. Clearly then, when something acts simply like a mathematical function - provide input, get output (even if there is a delay in getting that output), then we can think of that thing as a transformer. 
+\newline
+
+To expand on this, certain systems \textit{become} transformers at higher levels because their non-linearities aren't relevant to the higher system. For example the applications on your phone are systems that have loads of non-linearities in them that require systems engineers to think carefully about queues, cpu and memory usage, and so on. However at the level of the user, all of these things (at least during nominal operations) are hidden. Therefore to the user this simply becomes a memory-less transformer. There's a lot going on under the covers to make it memory-less, but if it's done well it achieves the goal and the user never knows about it. 
+\newline
+
+So when we're building systems the boundary of where that thinking remains valuable comes down to where we get to memory-less components (whether they are that way by scale, design, or nature). In those cases rather than systems we have transformers, and understanding transformers is a little different than understanding systems.
+
 \section{The Archetype Catalog}
+\subsection{Education}
+\subsection{Development}
+\subsection{Product Management}
+\subsection{Applications}
 
 \section{The Currencies Catalog}
+\subsection{Backlogs and Queues}
 
+\chapter{The Art of Precision}  
+\section{Why Precision Matters}
+This is one of those things that is superbly obvious when you think about it but somehow always falls through the cracks. When we're trying to create anything of value we (hopefully) start with a design process that helps us think through what we're going to build, how we're going to build it, what obstacles we may face, etc. In theory what we want at the end of that process is more or less a proof that the design we have will result in the value we want. However the rigor of that proof \textit{completely} depends on the precision in our representation and language. 
+\newline
 
+As a simple example if I'm imagining have a restaurant I could have a design which outlines what kinds of cuisine I'm going to sell, what kind of setting, where it'll be, etc. However this design is incredibly high level and misses a lot of detail that's critical to actually getting the restaurant off the ground - how much will all of this cost, how will I manage inventory, what'll be my hours, how will I manage my staff, etc. As the precision in both my questions and answers increases my ability to note faults in my thinking grows and the confidence that I will hit my target increases as well.
+\newline
 
+So if it's so obvious that precision is needed, why is it so often overlooked? Because being precise means \textit{knowing the right kinds of questions to ask and what good answers look like}. Therefore as with many of the other practical guides here in this book this once again comes down to creating a catalog of the kinds of questions to ask as well as what counts as an answer. That then is what the rest of the chapter is all about.
+
+\begin{enumerate}
+\item Units
+\item Inputs/Outputs
+\item Time
+\item Explicitly drawing out the proof
+\end{enumerate}
 
 \chapter{Things I'd Like to Include}
 \begin{enumerate}
 \item The fact that lots of times we think of building products and the product as the system we are managing when really the system we are managing is the organization doing the work of building the system (everyone at Viasat doesn't think about development as a system at all, the only systems we think about are technical ones)
-\item The need for precision
-\item When aren't systems relevant?
 \item How does all of this practical stuff tie back to our positive sum systems idea?
 \end{enumerate}
 
