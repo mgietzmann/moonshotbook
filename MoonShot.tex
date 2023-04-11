@@ -513,6 +513,54 @@ At the basis of all the designing, executing, and, frankly, imagining that you'l
 Two issues face us here - comprehension and truthfulness. Gaps in our knowledge act more or less as blind spots that we can either resolve before we get to deep into the work or later when we suddenly realize there was something we didn't even think to think about. But even worse is basing decisions on knowledge we think we have but which is actually inaccurate. So one of the primary focuses of our "design process" has to be acquiring and testing relevant knowledge which brings us right into the realm of philosophy because we must begin with the question - how do we determine "truthfullness" in the first place.
 
 \subsection{Truthiness}
+Any introduction to logic and critical thinking will point out two ways of reasoning about the world - deduction and induction. Deduction, from a logical thinking standpoint, is definitely the nicer of the two. Deduction entails taking a series of premises (which you hold to be true) and then using formal logic to create a proof of some conclusion. What's nice about deduction is the fact that it leads to conclusions that are not likely or probably, but absolutely and fundamentally true - given your premises are correct. And that's the Achilles heel of deduction - it is absolutely dependent on the premises being true themselves. Likewise, deduction cannot create its own premises because that would just require a series of different premises whose truth would then be in question. This is why ancient Greek philosophers made such a stink about "self evident" premises - premises so obvious they don't require proof. 
+\newline
+
+At first this seems like a reasonable way out. For example Euclid proposed a set of very basic premises (like "things which are equal to each the same thing are also equal to one another") and came up with the geometry you use in high school and for thousands of years was considered \textit{the} geometry of our world. And yet, thanks to Einstein and Riemann we now know that some of his self evident premises are not actually true at all. Deduction can show things follow from their premises, but it can never show that something is truthfully real.
+\newline
+
+Alright, so what about induction? Induction is what's behind the fact that you believe the sun will rise again tomorrow. The basis of induction is the assumption that given seeing a pattern many times, it's likely you'll see that pattern continue into the future. Seems pretty reasonable, right? Unfortunately, as many philosophers have pointed out (with Hume being the most notable) induction can in no way \textit{prove} anything \cite{lipton}.
+\newline
+
+The first reason for this is that there's no proof for induction that isn't itself an inductive argument \cite{lipton}. And circular arguments are no good. For example suppose I assumed the opposite of induction as an argument - i.e. that if I observe a pattern I expect it to not work out the same way the next time. Then the fact that so far the pattern of normal induction has held I'm allowed to believe that in the future my twisted (radical) version of induction will hold. Circular arguments let you prove pretty much anything, so the fact that there's no argument for induction that isn't itself circular doesn't bode well.
+\newline
+
+However we could suggest that maybe we just take induction at face value and use it without trying to build any kind of proof. Couldn't it still be useful? The problem is that induction at face value is demonstrably very dangerous. A classic example uses the notion of a contrapositive. In formal logic if I have the statement - all ravens are black - the contrapositive statement - all things that aren't black aren't ravens - is taken as logically equivalent. In other words if I can prove the latter I prove the former. However from the point of view of an inductive argument all I need to do is go outside and collect green leaves to gather evidence that non-black things aren't ravens \cite{lipton}. Obviously there's more to evidenced based thinking than just straight induction.
+\newline
+
+Alright so we clearly need something else. So what's the right way of creating arguments that can allow us to prove things? Loads of philosophical and mathematical literature will quickly convince you that the answer is - no one knows for sure \cite{lipton} \cite{tkuhn}. However we can't throw up our hands because we need to get at the truth or something like it somehow! So what are we to do? Well we can take a leaf out of our own book. Remember with design thinking we aren't trying to avoid failure altogether, just reduce its impact. Similarly here rather than pursuing truth we could look instead to reducing error. Put another way, what if instead of trying to prove our mental model right, we tried to look for how it's wrong. Then every time someone proved someone else wrong is an example for us to follow! So let's take a look at how we might do this. 
+
+\subsection{Stress Testing}
+The first problem we come across when thinking about stress testing our model is figuring out what our model actually is. For most of us we make assertions automatically using the mental models that have become embedded in our subconscious. This is useful because our subconscious is very powerful \cite{newport} but it also means it can be pretty unclear what's actually happening behind the scenes. Thankfully there's a pretty straight forward way to start teasing out the details of our mental models - making predictions. 
+\newline
+
+More or less the idea is this, for some particular subject or event that you want some certainty around, start by thinking of all the measurables you could create from it. In doing this it is extremely helpful to look for ways others have measured or represented data in the past to get ideas for all the kinds of observations you could make. For example if we're talking about the physics of the sky, weather, temperature, color, consistency, wind speed, etc. could all be measureables. More or less start by being very \textit{observant}. The more ways you look at the data the higher the odds you find illuminating surprises. But surprises only occur when you yourself have \textit{expectations}. So in each of these cases come up with what you think each of these should be like and why - i.e. come up with specific predictions that you feel very confident about. One of three things will happen at this point:
+
+\begin{enumerate}
+\item Your expectation and reality line up
+\item You realize you don't have any expectations
+\item Your expectation and reality don't line up
+\end{enumerate} 
+
+In the first case there's nothing to. In the second it means you've found a spot where your mental model is lacking comprehension (it's up to you to determine if that lack of comprehension matters). And in the third case it means that you've found an error in your mental model that needs to be dealt with. In general though, through this observant, fact-foil \cite{lipton} approach you'll quickly find the boundaries and specifics of your current mental model as well as any obvious errors.
+\newline 
+
+However, at some point you may find that your mental model and what you're observing line up pretty well. At this point (and honestly before it) you can deploy another mechanism for rooting out errors - learning from the mistakes of others. This too is a straight forward process, all you need to do is find folks who've been making predictions like your own and see where it is they've been found to go wrong. Then push your model into those areas as well and see how you fare. So for example if you're running surveys it's good to know the various kinds of survey bias that others have run into in the past.  
+\newline
+
+And speaking of learning from others it's just as important to seek alternate perspectives to your own. We usually do this when we're learning about something for the first time and are trying to absorb a matured perspective, but even as we become experts, finding ways in which people are thinking differently from us opens the doors to understanding where our models might be wrong (or not comprehensive enough). In general, like with the fact-foil, a compare and contrast approach is usually extremely productive.
+\newline
+
+Finally it's important to avoid the most (in my mind) nefarious error in model building - over fitting. Over fitting occurs when you build a model that can explain everything you've already seen but has no predictive power. In general given the flexibility in model building you always have enough freedom to build some rube-goldberg machine that through its sheer complexity is able to capture every bit of variance you've found so far. However these are not useful models because they never let us predict anything new (and therefore rarely if ever line up with the truth). To protect yourself from this its important that every time you make modifications to your model you have plans on how to test the modifications on something new, otherwise you'll always have success in modifying your model but no success in using it in the future. 
+\newline
+
+There are obviously loads more tips and tricks you can use to seek out and destroy errors in your thinking but between these four - observant fact-foil, learning from the mistakes of others, seeking alternate perspectives, and avoiding over fitting - I suspect you'll naturally come across the others. Indeed the combination of these four, and the fact that the specifically drive exploration and expansion of your mental models means that they also drive comprehension - which was the other quality of knowledge we were seeking out at the beginning of this section. Removing error and comprehension typically go hand in hand. 
+\newline
+
+
+
+\subsection{Summing it Up}
+In summary then to get our knowledge into shape and make sure it's comprehensive enough we should actively search for and root out the errors in our ways of thinking. This however is a very unnatural thing to do - indeed one might say that constantly just looking for where you're wrong could get pretty depressing. As such it's extremely important to the success of this kind of whack-a-mole that you develop a mindset where finding and resolving new errors is rewarding and fun, otherwise you'll eventually just lose patience and move onto something else. This is also the kind of exercise that can quickly get extremely overwhelming - so make a habit of documenting things clearly and just in general writing down and organizing what you find - otherwise you'll quickly feel like you're losing your mind. But, if you are able to setup consistent habits that work to drive out the errors in your thinking then you'll find yourself day by day more confident in what you know and the boundaries of that knowledge.
 
 \chapter{Systems Engineers}
 \section{Diversity First}
